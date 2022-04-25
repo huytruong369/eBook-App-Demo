@@ -1,3 +1,4 @@
+import 'package:ebook_app_demo/screens/detail_screen.dart';
 import 'package:ebook_app_demo/widgets/book_rating.dart';
 import 'package:ebook_app_demo/widgets/two_size_rounded_button.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class ReadingListCard extends StatelessWidget {
   final double rating;
   final VoidCallback pressDetails;
   final VoidCallback pressRead;
+
   const ReadingListCard({
     Key? key,
     required this.image,
@@ -24,7 +26,11 @@ class ReadingListCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: pressDetails,
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+          return DetailsScreen();
+        }));
+      },
       child: Container(
         margin: const EdgeInsets.only(
           left: 23,

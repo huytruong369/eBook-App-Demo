@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 class TwoSizeRoundedButton extends StatelessWidget {
   final double radius;
   final String text;
-  final VoidCallback press;
+  final VoidCallback? press;
   const TwoSizeRoundedButton({
     Key? key,
-    required this.radius,
+    this.radius = 29,
     required this.text,
-    required this.press,
+    this.press,
   }) : super(key: key);
 
   @override
